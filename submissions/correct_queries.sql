@@ -1,43 +1,54 @@
+CREATE VIEW query_1 AS
 select email from clients where Phone_Number like '555%' or Phone_Number like '404%';
 
+CREATE VIEW query_2 AS
 select property_name, customer, c.ccnumber, c.cvv, c.exp_date from reserve r, customer c where r.customer = c.email and (start_date between '2022-10-15' and '2022-10-20') and (end_date between '2022-10-21' and '2022-10-30') ;
 
+CREATE VIEW query_3 AS
 SELECT Owner_Email as "Owner Email", Property_Name as "Property Name", Content as "Positive review" FROM Review where (Content LIKE "%great%" OR Content LIKE "%excellent%") and LENGTH(Content) > 25;
 
+CREATE VIEW query_4 AS
 SELECT To_Airport as "Destination Airport", AVG(Cost) as "Average Cost", AVG(Capacity) as "Average Capacity" FROM Flight GROUP BY (To_Airport);
 
+CREATE VIEW query_5 AS
 select property_name, owner_email, airport, distance from is_close_to where distance in (select min(distance) as closest_property from is_close_to group by airport);
 
+CREATE VIEW query_6 AS
 SELECT A.Email, A.First_Name, A.Last_Name, C.Phone_Number from Accounts A JOIN Clients C
 ON A.Email = C.Email
 ORDER BY A.Last_Name;
 
+CREATE VIEW query_7 AS
 select * from flight order by cost, flight_date desc;
 
+CREATE VIEW query_8 AS
 SELECT Property_Name, Property_Owner, GROUP_CONCAT(Amenity_Name)
 FROM Amenity
 GROUP BY Property_Name, Property_Owner;
 
+CREATE VIEW query_9 AS
 SELECT C.Email, C.CcNumber from Customer C JOIN Book B ON C.Email = B.Customer
 WHERE B.Was_Cancelled = 1;
 
 create or replace view v1 as  select f.airline_name, sum(num_seats) as total_seats from book b, flight f where b.flight_num = f.flight_num and b.airline_name = f.airline_name and flight_date = '2022-10-18' and not was_cancelled group by f.airline_name;
+CREATE VIEW query_10 AS
 select airline.airline_name,  v1.total_seats from airline left join v1 on airline.airline_name = v1.airline_name;
 
-
-SELECT 
+CREATE VIEW query_11 AS
+SELECT
 	  c.First_Name AS owner_first_name,
       c.Last_Name AS owner_last_name,
       SUM(r.Num_Guests) AS total_guests
-	FROM 
-	  Accounts c 
-	  INNER JOIN Reserve r ON c.Email = r.Owner_Email 
+	FROM
+	  Accounts c
+	  INNER JOIN Reserve r ON c.Email = r.Owner_Email
 	  AND YEAR(r.Start_Date)= '2022'
-	GROUP BY 
+	GROUP BY
 	  c.Email
-	ORDER BY 
+	ORDER BY
 	  c.First_Name, c.Last_Name;
 
+CREATE VIEW query_12 AS
 SELECT Property.Property_Name, Property.Owner_Email, COUNT(Review.Customer) AS Review_Count
 	FROM Property
 	LEFT JOIN Review ON Property.Property_Name = Review.Property_Name AND Property.Owner_Email = Review.Owner_Email
@@ -45,6 +56,7 @@ SELECT Property.Property_Name, Property.Owner_Email, COUNT(Review.Customer) AS R
 	HAVING COUNT(Review.Customer) > 0
 	ORDER BY Review_Count DESC;
 
+CREATE VIEW query_13 AS
 SELECT DISTINCT C.Email
 	FROM Customer C
 	JOIN Book B ON C.Email = B.Customer
@@ -54,6 +66,7 @@ SELECT DISTINCT C.Email
 	HAVING AVG(A.Rating) > 4.0
 	ORDER BY C.Email;
 
+-- CREATE VIEW query_14 AS
 WITH PropertyAmenities AS (
 	    SELECT Property_Name, Property_Owner, COUNT(*) AS Amenity_Count
 	    FROM Amenity
@@ -64,6 +77,7 @@ WITH PropertyAmenities AS (
 	LEFT JOIN PropertyAmenities ON Property.Property_Name = PropertyAmenities.Property_Name
 	ORDER BY Amenity_Count DESC;
 
+-- CREATE VIEW query_15 AS
 WITH AirportTraffic AS (
 	    SELECT From_Airport AS Airport_Id, COUNT(*) AS Departures, 0 AS Arrivals
 	    FROM Flight
@@ -78,15 +92,3 @@ WITH AirportTraffic AS (
 	GROUP BY Airport_Id
 	ORDER BY Total_Traffic DESC
 	LIMIT 5;
-
-
-
-
-
-
-
-
-
-
-
-

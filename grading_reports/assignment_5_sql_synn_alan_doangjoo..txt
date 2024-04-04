@@ -1,0 +1,82 @@
+Query 5: Incorrect
+Expected:
+('Beautiful San Jose Mansion', 'arthurread@gmail.com', 'SJC', 8)
+('Chicago Blackhawks House', 'hwmit@gmail.com', 'ORD', 11)
+('Family Beach House', 'ellie2@gmail.com', 'MIA', 19)
+('House near Georgia Tech', 'gburdell3@gmail.com', 'ATL', 7)
+('LA Lakers Property', 'lebron6@gmail.com', 'LAX', 6)
+('Statue of Libery Property', 'mgeller5@gmail.com', 'JFK', 8)
+('Statue of Libery Property', 'mgeller5@gmail.com', 'LGA', 19)
+('Texas Roadhouse', 'mscott22@gmail.com', 'DFW', 8)
+Got:
+('House near Georgia Tech', 'gburdell3@gmail.com', 'ATL', 7)
+('Texas Roadhouse', 'mscott22@gmail.com', 'DFW', 8)
+('Statue of Libery Property', 'mgeller5@gmail.com', 'JFK', 8)
+('LA Lakers Property', 'lebron6@gmail.com', 'LAX', 6)
+('Statue of Libery Property', 'mgeller5@gmail.com', 'LGA', 19)
+('Family Beach House', 'ellie2@gmail.com', 'MIA', 19)
+('Chicago Blackhawks House', 'hwmit@gmail.com', 'ORD', 11)
+('Beautiful San Jose Mansion', 'arthurread@gmail.com', 'SJC', 8)
+
+
+Query 8: Incorrect
+Expected:
+('Atlanta Great Property', 'scooper3@gmail.com', 'A/C & Heating,Pets allowed,Washer and Dryer,Wifi & TV')
+('Beautiful Beach Property', 'msmith5@gmail.com', 'A/C & Heating,Washer and Dryer,Wifi & TV')
+('Beautiful San Jose Mansion', 'arthurread@gmail.com', 'A/C & Heating,Full Kitchen,Pets allowed,Washer and Dryer,Wifi & TV')
+('Chicago Blackhawks House', 'hwmit@gmail.com', 'A/C & Heating,Full Kitchen,Washer and Dryer,Wifi & TV')
+('Chicago Romantic Getaway', 'mj23@gmail.com', 'A/C & Heating,Wifi & TV')
+('Family Beach House', 'ellie2@gmail.com', 'A/C & Heating,Full Kitchen,Pets allowed,Washer and Dryer,Wifi & TV')
+('House near Georgia Tech', 'gburdell3@gmail.com', 'Full Kitchen,Washer and Dryer,Wifi & TV')
+('LA Kings House', 'arthurread@gmail.com', 'A/C & Heating,Full Kitchen,Washer and Dryer,Wifi & TV')
+('LA Lakers Property', 'lebron6@gmail.com', 'A/C & Heating,Full Kitchen,Washer and Dryer,Wifi & TV')
+('Los Angeles Property', 'arthurread@gmail.com', 'A/C & Heating,Pets allowed,Wifi & TV')
+('New York City Property', 'cbing10@gmail.com', 'A/C & Heating,Wifi & TV')
+('Statue of Libery Property', 'mgeller5@gmail.com', 'A/C & Heating,Wifi & TV')
+('Texas Longhorns House', 'mscott22@gmail.com', 'A/C & Heating,Full Kitchen,Pets allowed,Washer and Dryer,Wifi & TV')
+('Texas Roadhouse', 'mscott22@gmail.com', 'A/C & Heating,Pets allowed,Washer and Dryer,Wifi & TV')
+Got:
+('Atlanta Great Property', 'scooper3@gmail.com', 'A/C & Heating, Pets allowed, Washer and Dryer, Wifi & TV')
+('Beautiful Beach Property', 'msmith5@gmail.com', 'A/C & Heating, Washer and Dryer, Wifi & TV')
+('Beautiful San Jose Mansion', 'arthurread@gmail.com', 'A/C & Heating, Full Kitchen, Pets allowed, Washer and Dryer, Wifi & TV')
+('Chicago Blackhawks House', 'hwmit@gmail.com', 'A/C & Heating, Full Kitchen, Washer and Dryer, Wifi & TV')
+('Chicago Romantic Getaway', 'mj23@gmail.com', 'A/C & Heating, Wifi & TV')
+('Family Beach House', 'ellie2@gmail.com', 'A/C & Heating, Full Kitchen, Pets allowed, Washer and Dryer, Wifi & TV')
+('House near Georgia Tech', 'gburdell3@gmail.com', 'Full Kitchen, Washer and Dryer, Wifi & TV')
+('LA Kings House', 'arthurread@gmail.com', 'A/C & Heating, Full Kitchen, Washer and Dryer, Wifi & TV')
+('LA Lakers Property', 'lebron6@gmail.com', 'A/C & Heating, Full Kitchen, Washer and Dryer, Wifi & TV')
+('Los Angeles Property', 'arthurread@gmail.com', 'A/C & Heating, Pets allowed, Wifi & TV')
+('New York City Property', 'cbing10@gmail.com', 'A/C & Heating, Wifi & TV')
+('Statue of Libery Property', 'mgeller5@gmail.com', 'A/C & Heating, Wifi & TV')
+('Texas Longhorns House', 'mscott22@gmail.com', 'A/C & Heating, Full Kitchen, Pets allowed, Washer and Dryer, Wifi & TV')
+('Texas Roadhouse', 'mscott22@gmail.com', 'A/C & Heating, Pets allowed, Washer and Dryer, Wifi & TV')
+
+
+Query 10: Incorrect
+Expected:
+('American Airlines', None)
+('Delta Airlines', Decimal('2'))
+('Interjet', None)
+('JetBlue Airways', None)
+('Southwest Airlines', Decimal('2'))
+('Spirit Airlines', None)
+('United Airlines', Decimal('4'))
+('WestJet', None)
+Got:
+('Delta Airlines', Decimal('2'))
+('United Airlines', Decimal('4'))
+('Southwest Airlines', Decimal('2'))
+
+
+Query 13: Incorrect
+Expected:
+('aray@tiktok.com',)
+('cbing10@gmail.com',)
+('hwmit@gmail.com',)
+Got:
+('aray@tiktok.com',)
+('bshelton@gmail.com',)
+('cbing10@gmail.com',)
+('hwmit@gmail.com',)
+
+

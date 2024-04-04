@@ -1,0 +1,8 @@
+Query 14: Incorrect
+Submission: submissions/correct_queries.sql, Error in query 14: 1146 (42S02): Table 'travel_reservation_service.query_14' doesn't exist
+
+
+Query 15: Incorrect
+Submission: submissions/correct_queries.sql, Error in query 15: 1146 (42S02): Table 'travel_reservation_service.query_15' doesn't exist
+
+
